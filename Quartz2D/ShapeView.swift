@@ -22,8 +22,8 @@ class ShapeView:UIView
 		CGContextSaveGState(context)
 		let scale = min((rect.width - 40.00) / 119.60, (rect.height - 40.00) / 107.70)
 		CGContextScaleCTM(context, scale, scale)
-		let translateX = -(-57.75 + 119.60  / 2) + rect.width  / 2 / scale
-		let translateY = -(-53.80 + 107.70  / 2) + rect.height  / 2 / scale
+		let translateX = -(-57.75 + 119.60 / 2) + rect.width  / 2 / scale
+		let translateY = -(-53.80 + 107.70 / 2) + rect.height / 2 / scale
 		CGContextTranslateCTM(context, translateX, translateY)
 
 		// BEGIN-SOLID-STROKE
