@@ -8,9 +8,9 @@
 
 import UIKit
 
-func drawCross(context:CGContext?, center:CGPoint, color:UIColor)
+func drawCross(context:CGContext?, center:CGPoint, color:UIColor, length:CGFloat = 20)
 {
-    let LINE_LENGTH:CGFloat = 20
+    let LINE_LENGTH:CGFloat = length
     
     CGContextSetStrokeColorWithColor(context, color.CGColor)
     CGContextMoveToPoint(context,    center.x - LINE_LENGTH, center.y)
@@ -20,7 +20,7 @@ func drawCross(context:CGContext?, center:CGPoint, color:UIColor)
     CGContextStrokePath(context)
 }
 
-class GraphView:UIView
+class RadialGradientView:UIView
 {
     override func drawRect(rect: CGRect)
     {
@@ -47,6 +47,28 @@ class GraphView:UIView
     }
 }
 
+class ContextScaleView:UIView
+{
+    override func drawRect(rect: CGRect)
+    {
+        let context = UIGraphicsGetCurrentContext()
+        
+        let center = CGPoint(x: rect.width / 2, y: rect.height / 2)
+        let point = CGPoint(x: 100, y: 200)
+        drawCross(context, center: center, color: UIColor.redColor(), length:5)
+        drawCross(context, center: CGPoint(x: 100, y: 100), color: UIColor.blueColor(), length:5)
+        
+        let scale:CGFloat = 1.5
+        CGContextScaleCTM(context, scale, scale)
+        
+        drawCross(context, center: CGPoint(x: 0, y: 0), color: UIColor.blackColor(), length:5)
+//        CGContextTranslateCTM(context, -(scale - 1) * center.x / scale, -(scale - 1) * center.y / scale)
+        CGContextTranslateCTM(context, center.x / scale - point.x,
+                                       center.y / scale - point.y)
+        drawCross(context, center: point, color: UIColor.redColor(), length:10)
+    }
+}
+
 class ViewController: UIViewController
 {
 
@@ -54,8 +76,8 @@ class ViewController: UIViewController
     {
         super.viewDidLoad()
         
-        let graph = RadialGradientBoxView(frame: view.frame)
-        graph.backgroundColor = UIColor.clearColor()
+        let graph = ContextScaleView(frame: view.frame)
+        graph.backgroundColor = UIColor(white: 0.9, alpha: 1.0)
         view.addSubview(graph)
     }
 
