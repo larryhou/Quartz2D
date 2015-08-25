@@ -20,17 +20,20 @@ class ShapeView:UIView
 		var colors:[CGColor]
 
 		CGContextSaveGState(context)
-		CGContextScaleCTM(context, 3.4726, 3.4726)
-		CGContextTranslateCTM(context, 103.92,  59.56)
+		let scale = min((rect.width - 40.00) / 119.60, (rect.height - 40.00) / 107.70)
+		CGContextScaleCTM(context, scale, scale)
+		let translateX = -(-57.75 + 119.60  / 2) + rect.width  / 2 / scale
+		let translateY = -(-53.80 + 107.70  / 2) + rect.height  / 2 / scale
+		CGContextTranslateCTM(context, translateX, translateY)
 
 		// BEGIN-SOLID-STROKE
 		path = CGPathCreateMutable()
 		CGContextAddPath(context, path)
 		CGContextSetStrokeColorWithColor(context, UIColor(red:0.00, green:0.00, blue:0.00, alpha:1.00).CGColor)
-		CGContextSetLineWidth(context, 0.0)
+		CGContextSetLineWidth(context, 0.00)
 		CGContextSetLineCap(context, CGLineCap(rawValue:0)!)
 		CGContextSetLineJoin(context, CGLineJoin(rawValue:1)!)
-		CGContextSetMiterLimit(context, 3.0)
+		CGContextSetMiterLimit(context, 3.00)
 		CGContextStrokePath(context)
 		// END-SOLID-STROKE
 
@@ -90,7 +93,7 @@ class ShapeView:UIView
 		colors = [UIColor(red:0.64, green:0.89, blue:0.04, alpha:1.00).CGColor,UIColor(red:0.53, green:0.41, blue:0.24, alpha:1.00).CGColor]
 		locations = [0.0000,1.0000]
 		gradient = CGGradientCreateWithColors(CGColorSpaceCreateDeviceRGB(), colors, &locations)
-		CGContextDrawRadialGradient(context, gradient, CGPointMake(-0.6, 7.7), 0, CGPointMake(-0.6, 7.7), 27.5, CGGradientDrawingOptions.DrawsAfterEndLocation)
+		CGContextDrawRadialGradient(context, gradient, CGPointMake(-0.60, 7.70), 0, CGPointMake(-0.60, 7.70), 27.54, CGGradientDrawingOptions.DrawsAfterEndLocation)
 		CGContextRestoreGState(context)
 		// END-GRADIENT-FILL
 
@@ -127,7 +130,7 @@ class ShapeView:UIView
 		colors = [UIColor(red:0.62, green:0.80, blue:0.07, alpha:1.00).CGColor,UIColor(red:0.35, green:0.23, blue:0.18, alpha:1.00).CGColor]
 		locations = [0.0000,1.0000]
 		gradient = CGGradientCreateWithColors(CGColorSpaceCreateDeviceRGB(), colors, &locations)
-		CGContextDrawRadialGradient(context, gradient, CGPointMake(-0.6, 7.7), 0, CGPointMake(-0.6, 7.7), 27.5, CGGradientDrawingOptions.DrawsAfterEndLocation)
+		CGContextDrawRadialGradient(context, gradient, CGPointMake(-0.60, 7.70), 0, CGPointMake(-0.60, 7.70), 27.54, CGGradientDrawingOptions.DrawsAfterEndLocation)
 		CGContextRestoreGState(context)
 		// END-GRADIENT-FILL
 
@@ -609,7 +612,7 @@ class ShapeView:UIView
 		colors = [UIColor(red:0.66, green:0.86, blue:0.05, alpha:1.00).CGColor,UIColor(red:0.56, green:0.83, blue:0.05, alpha:1.00).CGColor,UIColor(red:0.35, green:0.63, blue:0.07, alpha:1.00).CGColor]
 		locations = [0.0000,0.3765,0.9490]
 		gradient = CGGradientCreateWithColors(CGColorSpaceCreateDeviceRGB(), colors, &locations)
-		CGContextDrawLinearGradient(context, gradient, CGPointMake(32.1, -29.5), CGPointMake(-4.5, 7.0), CGGradientDrawingOptions(rawValue: 0))
+		CGContextDrawLinearGradient(context, gradient, CGPointMake(32.09, -29.54), CGPointMake(-4.49, 7.04), CGGradientDrawingOptions(rawValue: 0))
 		CGContextRestoreGState(context)
 		// END-GRADIENT-FILL
 
@@ -641,7 +644,7 @@ class ShapeView:UIView
 		colors = [UIColor(red:0.85, green:0.94, blue:0.09, alpha:1.00).CGColor,UIColor(red:0.65, green:0.91, blue:0.06, alpha:1.00).CGColor,UIColor(red:0.35, green:0.63, blue:0.07, alpha:1.00).CGColor]
 		locations = [0.0000,0.5373,1.0000]
 		gradient = CGGradientCreateWithColors(CGColorSpaceCreateDeviceRGB(), colors, &locations)
-		CGContextDrawLinearGradient(context, gradient, CGPointMake(32.1, -29.5), CGPointMake(-4.5, 7.0), CGGradientDrawingOptions(rawValue: 0))
+		CGContextDrawLinearGradient(context, gradient, CGPointMake(32.09, -29.54), CGPointMake(-4.49, 7.04), CGGradientDrawingOptions(rawValue: 0))
 		CGContextRestoreGState(context)
 		// END-GRADIENT-FILL
 
@@ -669,7 +672,7 @@ class ShapeView:UIView
 		colors = [UIColor(red:0.87, green:0.94, blue:0.16, alpha:1.00).CGColor,UIColor(red:0.56, green:0.83, blue:0.05, alpha:1.00).CGColor,UIColor(red:0.32, green:0.55, blue:0.06, alpha:1.00).CGColor]
 		locations = [0.0824,0.3373,1.0000]
 		gradient = CGGradientCreateWithColors(CGColorSpaceCreateDeviceRGB(), colors, &locations)
-		CGContextDrawLinearGradient(context, gradient, CGPointMake(9.8, -38.1), CGPointMake(2.8, -19.5), CGGradientDrawingOptions(rawValue: 0))
+		CGContextDrawLinearGradient(context, gradient, CGPointMake(9.80, -38.12), CGPointMake(2.80, -19.48), CGGradientDrawingOptions(rawValue: 0))
 		CGContextRestoreGState(context)
 		// END-GRADIENT-FILL
 
@@ -850,7 +853,7 @@ class ShapeView:UIView
 		colors = [UIColor(red:0.74, green:0.89, blue:0.06, alpha:1.00).CGColor,UIColor(red:0.56, green:0.83, blue:0.05, alpha:1.00).CGColor,UIColor(red:0.29, green:0.51, blue:0.06, alpha:1.00).CGColor]
 		locations = [0.0000,0.1922,1.0000]
 		gradient = CGGradientCreateWithColors(CGColorSpaceCreateDeviceRGB(), colors, &locations)
-		CGContextDrawLinearGradient(context, gradient, CGPointMake(9.8, -38.1), CGPointMake(2.8, -19.5), CGGradientDrawingOptions(rawValue: 0))
+		CGContextDrawLinearGradient(context, gradient, CGPointMake(9.80, -38.12), CGPointMake(2.80, -19.48), CGGradientDrawingOptions(rawValue: 0))
 		CGContextRestoreGState(context)
 		// END-GRADIENT-FILL
 
@@ -956,7 +959,7 @@ class ShapeView:UIView
 		colors = [UIColor(red:0.74, green:0.89, blue:0.06, alpha:1.00).CGColor,UIColor(red:0.57, green:0.78, blue:0.05, alpha:1.00).CGColor,UIColor(red:0.22, green:0.38, blue:0.05, alpha:1.00).CGColor]
 		locations = [0.0000,0.1922,1.0000]
 		gradient = CGGradientCreateWithColors(CGColorSpaceCreateDeviceRGB(), colors, &locations)
-		CGContextDrawLinearGradient(context, gradient, CGPointMake(9.8, -38.1), CGPointMake(2.8, -19.5), CGGradientDrawingOptions(rawValue: 0))
+		CGContextDrawLinearGradient(context, gradient, CGPointMake(9.80, -38.12), CGPointMake(2.80, -19.48), CGGradientDrawingOptions(rawValue: 0))
 		CGContextRestoreGState(context)
 		// END-GRADIENT-FILL
 
@@ -1054,7 +1057,7 @@ class ShapeView:UIView
 		colors = [UIColor(red:0.55, green:0.77, blue:0.04, alpha:1.00).CGColor,UIColor(red:0.73, green:0.80, blue:0.07, alpha:1.00).CGColor,UIColor(red:0.91, green:0.96, blue:0.47, alpha:1.00).CGColor]
 		locations = [0.0314,0.5961,1.0000]
 		gradient = CGGradientCreateWithColors(CGColorSpaceCreateDeviceRGB(), colors, &locations)
-		CGContextDrawRadialGradient(context, gradient, CGPointMake(0.0, 6.7), 0, CGPointMake(0.0, 6.7), 52.8, CGGradientDrawingOptions.DrawsAfterEndLocation)
+		CGContextDrawRadialGradient(context, gradient, CGPointMake(0.00, 6.70), 0, CGPointMake(0.00, 6.70), 52.80, CGGradientDrawingOptions.DrawsAfterEndLocation)
 		CGContextRestoreGState(context)
 		// END-GRADIENT-FILL
 
@@ -1073,7 +1076,7 @@ class ShapeView:UIView
 		colors = [UIColor(red:0.22, green:0.61, blue:0.05, alpha:1.00).CGColor,UIColor(red:0.45, green:0.68, blue:0.09, alpha:1.00).CGColor,UIColor(red:0.88, green:0.94, blue:0.29, alpha:1.00).CGColor]
 		locations = [0.0314,0.3216,0.8510]
 		gradient = CGGradientCreateWithColors(CGColorSpaceCreateDeviceRGB(), colors, &locations)
-		CGContextDrawRadialGradient(context, gradient, CGPointMake(0.0, 6.7), 0, CGPointMake(0.0, 6.7), 52.8, CGGradientDrawingOptions.DrawsAfterEndLocation)
+		CGContextDrawRadialGradient(context, gradient, CGPointMake(0.00, 6.70), 0, CGPointMake(0.00, 6.70), 52.80, CGGradientDrawingOptions.DrawsAfterEndLocation)
 		CGContextRestoreGState(context)
 		// END-GRADIENT-FILL
 
@@ -1115,7 +1118,7 @@ class ShapeView:UIView
 		colors = [UIColor(red:0.64, green:0.89, blue:0.04, alpha:1.00).CGColor,UIColor(red:0.82, green:0.89, blue:0.07, alpha:1.00).CGColor,UIColor(red:0.91, green:0.96, blue:0.47, alpha:1.00).CGColor]
 		locations = [0.0314,0.5961,1.0000]
 		gradient = CGGradientCreateWithColors(CGColorSpaceCreateDeviceRGB(), colors, &locations)
-		CGContextDrawRadialGradient(context, gradient, CGPointMake(0.0, 6.7), 0, CGPointMake(0.0, 6.7), 52.8, CGGradientDrawingOptions.DrawsAfterEndLocation)
+		CGContextDrawRadialGradient(context, gradient, CGPointMake(0.00, 6.70), 0, CGPointMake(0.00, 6.70), 52.80, CGGradientDrawingOptions.DrawsAfterEndLocation)
 		CGContextRestoreGState(context)
 		// END-GRADIENT-FILL
 
@@ -1196,7 +1199,7 @@ class ShapeView:UIView
 		colors = [UIColor(red:0.25, green:0.42, blue:0.05, alpha:1.00).CGColor,UIColor(red:0.34, green:0.60, blue:0.07, alpha:1.00).CGColor]
 		locations = [0.0000,0.9490]
 		gradient = CGGradientCreateWithColors(CGColorSpaceCreateDeviceRGB(), colors, &locations)
-		CGContextDrawLinearGradient(context, gradient, CGPointMake(-41.1, 1.9), CGPointMake(-37.1, -22.4), CGGradientDrawingOptions(rawValue: 0))
+		CGContextDrawLinearGradient(context, gradient, CGPointMake(-41.15, 1.88), CGPointMake(-37.05, -22.38), CGGradientDrawingOptions(rawValue: 0))
 		CGContextRestoreGState(context)
 		// END-GRADIENT-FILL
 
@@ -1215,7 +1218,7 @@ class ShapeView:UIView
 		colors = [UIColor(red:0.69, green:0.87, blue:0.05, alpha:1.00).CGColor,UIColor(red:0.56, green:0.83, blue:0.05, alpha:1.00).CGColor,UIColor(red:0.35, green:0.63, blue:0.07, alpha:1.00).CGColor]
 		locations = [0.0000,0.1882,0.8392]
 		gradient = CGGradientCreateWithColors(CGColorSpaceCreateDeviceRGB(), colors, &locations)
-		CGContextDrawLinearGradient(context, gradient, CGPointMake(29.7, 1.9), CGPointMake(42.2, 28.5), CGGradientDrawingOptions(rawValue: 0))
+		CGContextDrawLinearGradient(context, gradient, CGPointMake(29.68, 1.92), CGPointMake(42.23, 28.48), CGGradientDrawingOptions(rawValue: 0))
 		CGContextRestoreGState(context)
 		// END-GRADIENT-FILL
 
@@ -1239,7 +1242,7 @@ class ShapeView:UIView
 		colors = [UIColor(red:0.74, green:0.89, blue:0.06, alpha:1.00).CGColor,UIColor(red:0.56, green:0.83, blue:0.05, alpha:1.00).CGColor,UIColor(red:0.35, green:0.63, blue:0.07, alpha:1.00).CGColor]
 		locations = [0.0000,0.4392,0.9490]
 		gradient = CGGradientCreateWithColors(CGColorSpaceCreateDeviceRGB(), colors, &locations)
-		CGContextDrawLinearGradient(context, gradient, CGPointMake(29.7, 1.9), CGPointMake(42.2, 28.5), CGGradientDrawingOptions(rawValue: 0))
+		CGContextDrawLinearGradient(context, gradient, CGPointMake(29.68, 1.92), CGPointMake(42.23, 28.48), CGGradientDrawingOptions(rawValue: 0))
 		CGContextRestoreGState(context)
 		// END-GRADIENT-FILL
 
@@ -1255,7 +1258,7 @@ class ShapeView:UIView
 		colors = [UIColor(red:0.31, green:0.54, blue:0.06, alpha:1.00).CGColor,UIColor(red:0.45, green:0.81, blue:0.09, alpha:1.00).CGColor]
 		locations = [0.4392,1.0000]
 		gradient = CGGradientCreateWithColors(CGColorSpaceCreateDeviceRGB(), colors, &locations)
-		CGContextDrawLinearGradient(context, gradient, CGPointMake(-41.1, 1.9), CGPointMake(-37.1, -22.4), CGGradientDrawingOptions(rawValue: 0))
+		CGContextDrawLinearGradient(context, gradient, CGPointMake(-41.15, 1.88), CGPointMake(-37.05, -22.38), CGGradientDrawingOptions(rawValue: 0))
 		CGContextRestoreGState(context)
 		// END-GRADIENT-FILL
 
@@ -1269,7 +1272,7 @@ class ShapeView:UIView
 		colors = [UIColor(red:0.65, green:0.86, blue:0.05, alpha:1.00).CGColor,UIColor(red:0.49, green:0.77, blue:0.05, alpha:1.00).CGColor,UIColor(red:0.32, green:0.57, blue:0.07, alpha:1.00).CGColor]
 		locations = [0.0000,0.2549,0.8196]
 		gradient = CGGradientCreateWithColors(CGColorSpaceCreateDeviceRGB(), colors, &locations)
-		CGContextDrawLinearGradient(context, gradient, CGPointMake(29.7, 1.9), CGPointMake(42.2, 28.5), CGGradientDrawingOptions(rawValue: 0))
+		CGContextDrawLinearGradient(context, gradient, CGPointMake(29.68, 1.92), CGPointMake(42.23, 28.48), CGGradientDrawingOptions(rawValue: 0))
 		CGContextRestoreGState(context)
 		// END-GRADIENT-FILL
 
@@ -1283,7 +1286,7 @@ class ShapeView:UIView
 		colors = [UIColor(red:0.69, green:0.87, blue:0.05, alpha:1.00).CGColor,UIColor(red:0.56, green:0.83, blue:0.05, alpha:1.00).CGColor,UIColor(red:0.35, green:0.63, blue:0.07, alpha:1.00).CGColor]
 		locations = [0.0000,0.4392,0.9490]
 		gradient = CGGradientCreateWithColors(CGColorSpaceCreateDeviceRGB(), colors, &locations)
-		CGContextDrawLinearGradient(context, gradient, CGPointMake(29.7, 1.9), CGPointMake(42.2, 28.5), CGGradientDrawingOptions(rawValue: 0))
+		CGContextDrawLinearGradient(context, gradient, CGPointMake(29.68, 1.92), CGPointMake(42.23, 28.48), CGGradientDrawingOptions(rawValue: 0))
 		CGContextRestoreGState(context)
 		// END-GRADIENT-FILL
 
@@ -1299,7 +1302,7 @@ class ShapeView:UIView
 		colors = [UIColor(red:0.65, green:0.86, blue:0.05, alpha:1.00).CGColor,UIColor(red:0.49, green:0.77, blue:0.05, alpha:1.00).CGColor,UIColor(red:0.32, green:0.57, blue:0.07, alpha:1.00).CGColor]
 		locations = [0.0000,0.4392,0.9490]
 		gradient = CGGradientCreateWithColors(CGColorSpaceCreateDeviceRGB(), colors, &locations)
-		CGContextDrawLinearGradient(context, gradient, CGPointMake(29.7, 1.9), CGPointMake(42.2, 28.5), CGGradientDrawingOptions(rawValue: 0))
+		CGContextDrawLinearGradient(context, gradient, CGPointMake(29.68, 1.92), CGPointMake(42.23, 28.48), CGGradientDrawingOptions(rawValue: 0))
 		CGContextRestoreGState(context)
 		// END-GRADIENT-FILL
 
@@ -1333,7 +1336,7 @@ class ShapeView:UIView
 		colors = [UIColor(red:0.87, green:0.94, blue:0.29, alpha:1.00).CGColor,UIColor(red:0.72, green:0.96, blue:0.14, alpha:1.00).CGColor,UIColor(red:0.45, green:0.81, blue:0.09, alpha:1.00).CGColor]
 		locations = [0.0000,0.4392,0.9490]
 		gradient = CGGradientCreateWithColors(CGColorSpaceCreateDeviceRGB(), colors, &locations)
-		CGContextDrawLinearGradient(context, gradient, CGPointMake(-41.1, 1.9), CGPointMake(-37.1, -22.4), CGGradientDrawingOptions(rawValue: 0))
+		CGContextDrawLinearGradient(context, gradient, CGPointMake(-41.15, 1.88), CGPointMake(-37.05, -22.38), CGGradientDrawingOptions(rawValue: 0))
 		CGContextRestoreGState(context)
 		// END-GRADIENT-FILL
 
@@ -1353,7 +1356,7 @@ class ShapeView:UIView
 		colors = [UIColor(red:0.81, green:0.89, blue:0.08, alpha:1.00).CGColor,UIColor(red:0.64, green:0.89, blue:0.04, alpha:1.00).CGColor,UIColor(red:0.40, green:0.72, blue:0.08, alpha:1.00).CGColor]
 		locations = [0.0000,0.4392,0.9490]
 		gradient = CGGradientCreateWithColors(CGColorSpaceCreateDeviceRGB(), colors, &locations)
-		CGContextDrawLinearGradient(context, gradient, CGPointMake(-41.1, 1.9), CGPointMake(-37.1, -22.4), CGGradientDrawingOptions(rawValue: 0))
+		CGContextDrawLinearGradient(context, gradient, CGPointMake(-41.15, 1.88), CGPointMake(-37.05, -22.38), CGGradientDrawingOptions(rawValue: 0))
 		CGContextRestoreGState(context)
 		// END-GRADIENT-FILL
 
@@ -1372,7 +1375,7 @@ class ShapeView:UIView
 		colors = [UIColor(red:0.75, green:0.97, blue:0.24, alpha:1.00).CGColor,UIColor(red:0.56, green:0.49, blue:0.24, alpha:1.00).CGColor]
 		locations = [0.0000,1.0000]
 		gradient = CGGradientCreateWithColors(CGColorSpaceCreateDeviceRGB(), colors, &locations)
-		CGContextDrawRadialGradient(context, gradient, CGPointMake(-0.6, 7.7), 0, CGPointMake(-0.6, 7.7), 27.5, CGGradientDrawingOptions.DrawsAfterEndLocation)
+		CGContextDrawRadialGradient(context, gradient, CGPointMake(-0.60, 7.70), 0, CGPointMake(-0.60, 7.70), 27.54, CGGradientDrawingOptions.DrawsAfterEndLocation)
 		CGContextRestoreGState(context)
 		// END-GRADIENT-FILL
 
@@ -1399,7 +1402,7 @@ class ShapeView:UIView
 		colors = [UIColor(red:0.39, green:0.54, blue:0.02, alpha:1.00).CGColor,UIColor(red:0.73, green:0.80, blue:0.07, alpha:1.00).CGColor,UIColor(red:0.91, green:0.96, blue:0.47, alpha:1.00).CGColor]
 		locations = [0.0314,0.5961,1.0000]
 		gradient = CGGradientCreateWithColors(CGColorSpaceCreateDeviceRGB(), colors, &locations)
-		CGContextDrawRadialGradient(context, gradient, CGPointMake(0.0, 6.7), 0, CGPointMake(0.0, 6.7), 52.8, CGGradientDrawingOptions.DrawsAfterEndLocation)
+		CGContextDrawRadialGradient(context, gradient, CGPointMake(0.00, 6.70), 0, CGPointMake(0.00, 6.70), 52.80, CGGradientDrawingOptions.DrawsAfterEndLocation)
 		CGContextRestoreGState(context)
 		// END-GRADIENT-FILL
 
@@ -1417,7 +1420,7 @@ class ShapeView:UIView
 		colors = [UIColor(red:0.55, green:0.75, blue:0.05, alpha:1.00).CGColor,UIColor(red:0.30, green:0.53, blue:0.07, alpha:1.00).CGColor]
 		locations = [0.0000,0.9490]
 		gradient = CGGradientCreateWithColors(CGColorSpaceCreateDeviceRGB(), colors, &locations)
-		CGContextDrawLinearGradient(context, gradient, CGPointMake(10.7, 8.4), CGPointMake(28.3, 30.0), CGGradientDrawingOptions(rawValue: 0))
+		CGContextDrawLinearGradient(context, gradient, CGPointMake(10.66, 8.44), CGPointMake(28.34, 29.96), CGGradientDrawingOptions(rawValue: 0))
 		CGContextRestoreGState(context)
 		// END-GRADIENT-FILL
 
@@ -1447,7 +1450,7 @@ class ShapeView:UIView
 		colors = [UIColor(red:0.74, green:0.89, blue:0.06, alpha:1.00).CGColor,UIColor(red:0.55, green:0.75, blue:0.05, alpha:1.00).CGColor,UIColor(red:0.30, green:0.53, blue:0.07, alpha:1.00).CGColor]
 		locations = [0.0000,0.2667,0.9490]
 		gradient = CGGradientCreateWithColors(CGColorSpaceCreateDeviceRGB(), colors, &locations)
-		CGContextDrawLinearGradient(context, gradient, CGPointMake(10.7, 8.4), CGPointMake(28.3, 30.0), CGGradientDrawingOptions(rawValue: 0))
+		CGContextDrawLinearGradient(context, gradient, CGPointMake(10.66, 8.44), CGPointMake(28.34, 29.96), CGGradientDrawingOptions(rawValue: 0))
 		CGContextRestoreGState(context)
 		// END-GRADIENT-FILL
 
@@ -1468,7 +1471,7 @@ class ShapeView:UIView
 		colors = [UIColor(red:0.86, green:0.94, blue:0.13, alpha:1.00).CGColor,UIColor(red:0.64, green:0.88, blue:0.05, alpha:1.00).CGColor,UIColor(red:0.33, green:0.59, blue:0.08, alpha:1.00).CGColor]
 		locations = [0.0000,0.2824,0.9490]
 		gradient = CGGradientCreateWithColors(CGColorSpaceCreateDeviceRGB(), colors, &locations)
-		CGContextDrawLinearGradient(context, gradient, CGPointMake(10.7, 8.4), CGPointMake(28.3, 30.0), CGGradientDrawingOptions(rawValue: 0))
+		CGContextDrawLinearGradient(context, gradient, CGPointMake(10.66, 8.44), CGPointMake(28.34, 29.96), CGGradientDrawingOptions(rawValue: 0))
 		CGContextRestoreGState(context)
 		// END-GRADIENT-FILL
 
@@ -1505,7 +1508,7 @@ class ShapeView:UIView
 		colors = [UIColor(red:0.98, green:0.98, blue:0.22, alpha:1.00).CGColor,UIColor(red:0.56, green:0.49, blue:0.24, alpha:1.00).CGColor]
 		locations = [0.0196,1.0000]
 		gradient = CGGradientCreateWithColors(CGColorSpaceCreateDeviceRGB(), colors, &locations)
-		CGContextDrawRadialGradient(context, gradient, CGPointMake(-0.6, 7.7), 0, CGPointMake(-0.6, 7.7), 27.5, CGGradientDrawingOptions.DrawsAfterEndLocation)
+		CGContextDrawRadialGradient(context, gradient, CGPointMake(-0.60, 7.70), 0, CGPointMake(-0.60, 7.70), 27.54, CGGradientDrawingOptions.DrawsAfterEndLocation)
 		CGContextRestoreGState(context)
 		// END-GRADIENT-FILL
 
@@ -1551,7 +1554,7 @@ class ShapeView:UIView
 		colors = [UIColor(red:0.74, green:0.89, blue:0.06, alpha:1.00).CGColor,UIColor(red:0.56, green:0.83, blue:0.05, alpha:1.00).CGColor,UIColor(red:0.35, green:0.63, blue:0.07, alpha:1.00).CGColor]
 		locations = [0.0000,0.4392,0.9490]
 		gradient = CGGradientCreateWithColors(CGColorSpaceCreateDeviceRGB(), colors, &locations)
-		CGContextDrawLinearGradient(context, gradient, CGPointMake(-32.2, -35.6), CGPointMake(-8.2, -11.7), CGGradientDrawingOptions(rawValue: 0))
+		CGContextDrawLinearGradient(context, gradient, CGPointMake(-32.17, -35.62), CGPointMake(-8.23, -11.68), CGGradientDrawingOptions(rawValue: 0))
 		CGContextRestoreGState(context)
 		// END-GRADIENT-FILL
 
@@ -1609,7 +1612,7 @@ class ShapeView:UIView
 		colors = [UIColor(red:0.73, green:0.81, blue:0.06, alpha:1.00).CGColor,UIColor(red:0.52, green:0.72, blue:0.05, alpha:1.00).CGColor,UIColor(red:0.30, green:0.53, blue:0.07, alpha:1.00).CGColor]
 		locations = [0.0000,0.4392,0.9490]
 		gradient = CGGradientCreateWithColors(CGColorSpaceCreateDeviceRGB(), colors, &locations)
-		CGContextDrawLinearGradient(context, gradient, CGPointMake(-32.2, -35.6), CGPointMake(-8.2, -11.7), CGGradientDrawingOptions(rawValue: 0))
+		CGContextDrawLinearGradient(context, gradient, CGPointMake(-32.17, -35.62), CGPointMake(-8.23, -11.68), CGGradientDrawingOptions(rawValue: 0))
 		CGContextRestoreGState(context)
 		// END-GRADIENT-FILL
 
@@ -1654,7 +1657,7 @@ class ShapeView:UIView
 		colors = [UIColor(red:0.87, green:0.95, blue:0.22, alpha:1.00).CGColor,UIColor(red:0.68, green:0.94, blue:0.06, alpha:1.00).CGColor,UIColor(red:0.25, green:0.44, blue:0.06, alpha:1.00).CGColor]
 		locations = [0.0000,0.2039,0.6667]
 		gradient = CGGradientCreateWithColors(CGColorSpaceCreateDeviceRGB(), colors, &locations)
-		CGContextDrawLinearGradient(context, gradient, CGPointMake(-34.0, -16.6), CGPointMake(-4.0, -2.7), CGGradientDrawingOptions(rawValue: 0))
+		CGContextDrawLinearGradient(context, gradient, CGPointMake(-34.03, -16.60), CGPointMake(-3.97, -2.70), CGGradientDrawingOptions(rawValue: 0))
 		CGContextRestoreGState(context)
 		// END-GRADIENT-FILL
 
@@ -1672,7 +1675,7 @@ class ShapeView:UIView
 		colors = [UIColor(red:0.90, green:0.95, blue:0.38, alpha:1.00).CGColor,UIColor(red:0.56, green:0.83, blue:0.05, alpha:1.00).CGColor,UIColor(red:0.38, green:0.61, blue:0.05, alpha:1.00).CGColor]
 		locations = [0.0000,0.2667,1.0000]
 		gradient = CGGradientCreateWithColors(CGColorSpaceCreateDeviceRGB(), colors, &locations)
-		CGContextDrawLinearGradient(context, gradient, CGPointMake(-34.0, -16.6), CGPointMake(-4.0, -2.7), CGGradientDrawingOptions(rawValue: 0))
+		CGContextDrawLinearGradient(context, gradient, CGPointMake(-34.03, -16.60), CGPointMake(-3.97, -2.70), CGGradientDrawingOptions(rawValue: 0))
 		CGContextRestoreGState(context)
 		// END-GRADIENT-FILL
 
@@ -1717,7 +1720,7 @@ class ShapeView:UIView
 		colors = [UIColor(red:0.88, green:0.95, blue:0.25, alpha:1.00).CGColor,UIColor(red:0.65, green:0.91, blue:0.06, alpha:1.00).CGColor,UIColor(red:0.44, green:0.77, blue:0.09, alpha:1.00).CGColor]
 		locations = [0.1725,0.5804,1.0000]
 		gradient = CGGradientCreateWithColors(CGColorSpaceCreateDeviceRGB(), colors, &locations)
-		CGContextDrawLinearGradient(context, gradient, CGPointMake(-47.1, 13.6), CGPointMake(-7.4, -4.5), CGGradientDrawingOptions(rawValue: 0))
+		CGContextDrawLinearGradient(context, gradient, CGPointMake(-47.11, 13.62), CGPointMake(-7.39, -4.52), CGGradientDrawingOptions(rawValue: 0))
 		CGContextRestoreGState(context)
 		// END-GRADIENT-FILL
 
@@ -1735,7 +1738,7 @@ class ShapeView:UIView
 		colors = [UIColor(red:0.74, green:0.89, blue:0.06, alpha:1.00).CGColor,UIColor(red:0.56, green:0.83, blue:0.05, alpha:1.00).CGColor,UIColor(red:0.35, green:0.63, blue:0.07, alpha:1.00).CGColor]
 		locations = [0.0000,0.4392,0.9490]
 		gradient = CGGradientCreateWithColors(CGColorSpaceCreateDeviceRGB(), colors, &locations)
-		CGContextDrawLinearGradient(context, gradient, CGPointMake(-47.1, 13.6), CGPointMake(-7.4, -4.5), CGGradientDrawingOptions(rawValue: 0))
+		CGContextDrawLinearGradient(context, gradient, CGPointMake(-47.11, 13.62), CGPointMake(-7.39, -4.52), CGGradientDrawingOptions(rawValue: 0))
 		CGContextRestoreGState(context)
 		// END-GRADIENT-FILL
 
@@ -1756,7 +1759,7 @@ class ShapeView:UIView
 		colors = [UIColor(red:0.92, green:0.96, blue:0.47, alpha:1.00).CGColor,UIColor(red:0.72, green:0.89, blue:0.12, alpha:1.00).CGColor,UIColor(red:0.51, green:0.75, blue:0.08, alpha:1.00).CGColor]
 		locations = [0.0000,0.5725,1.0000]
 		gradient = CGGradientCreateWithColors(CGColorSpaceCreateDeviceRGB(), colors, &locations)
-		CGContextDrawLinearGradient(context, gradient, CGPointMake(-32.2, -35.6), CGPointMake(-8.2, -11.7), CGGradientDrawingOptions(rawValue: 0))
+		CGContextDrawLinearGradient(context, gradient, CGPointMake(-32.17, -35.62), CGPointMake(-8.23, -11.68), CGGradientDrawingOptions(rawValue: 0))
 		CGContextRestoreGState(context)
 		// END-GRADIENT-FILL
 
@@ -1772,7 +1775,7 @@ class ShapeView:UIView
 		colors = [UIColor(red:0.74, green:0.89, blue:0.06, alpha:1.00).CGColor,UIColor(red:0.56, green:0.83, blue:0.05, alpha:1.00).CGColor,UIColor(red:0.33, green:0.54, blue:0.05, alpha:1.00).CGColor,UIColor(red:0.20, green:0.35, blue:0.05, alpha:1.00).CGColor]
 		locations = [0.0000,0.1490,0.2745,0.6667]
 		gradient = CGGradientCreateWithColors(CGColorSpaceCreateDeviceRGB(), colors, &locations)
-		CGContextDrawLinearGradient(context, gradient, CGPointMake(-34.0, -16.6), CGPointMake(-4.0, -2.7), CGGradientDrawingOptions(rawValue: 0))
+		CGContextDrawLinearGradient(context, gradient, CGPointMake(-34.03, -16.60), CGPointMake(-3.97, -2.70), CGGradientDrawingOptions(rawValue: 0))
 		CGContextRestoreGState(context)
 		// END-GRADIENT-FILL
 
@@ -1789,7 +1792,7 @@ class ShapeView:UIView
 		colors = [UIColor(red:0.74, green:0.89, blue:0.06, alpha:1.00).CGColor,UIColor(red:0.56, green:0.83, blue:0.05, alpha:1.00).CGColor,UIColor(red:0.38, green:0.61, blue:0.05, alpha:1.00).CGColor]
 		locations = [0.0000,0.2667,1.0000]
 		gradient = CGGradientCreateWithColors(CGColorSpaceCreateDeviceRGB(), colors, &locations)
-		CGContextDrawLinearGradient(context, gradient, CGPointMake(-34.0, -16.6), CGPointMake(-4.0, -2.7), CGGradientDrawingOptions(rawValue: 0))
+		CGContextDrawLinearGradient(context, gradient, CGPointMake(-34.03, -16.60), CGPointMake(-3.97, -2.70), CGGradientDrawingOptions(rawValue: 0))
 		CGContextRestoreGState(context)
 		// END-GRADIENT-FILL
 
@@ -1820,7 +1823,7 @@ class ShapeView:UIView
 		colors = [UIColor(red:0.48, green:0.67, blue:0.03, alpha:1.00).CGColor,UIColor(red:0.62, green:0.76, blue:0.04, alpha:1.00).CGColor,UIColor(red:0.76, green:0.84, blue:0.07, alpha:1.00).CGColor]
 		locations = [0.0314,0.5961,1.0000]
 		gradient = CGGradientCreateWithColors(CGColorSpaceCreateDeviceRGB(), colors, &locations)
-		CGContextDrawRadialGradient(context, gradient, CGPointMake(0.0, 6.7), 0, CGPointMake(0.0, 6.7), 52.8, CGGradientDrawingOptions.DrawsAfterEndLocation)
+		CGContextDrawRadialGradient(context, gradient, CGPointMake(0.00, 6.70), 0, CGPointMake(0.00, 6.70), 52.80, CGGradientDrawingOptions.DrawsAfterEndLocation)
 		CGContextRestoreGState(context)
 		// END-GRADIENT-FILL
 
@@ -1843,7 +1846,7 @@ class ShapeView:UIView
 		colors = [UIColor(red:0.24, green:0.41, blue:0.05, alpha:1.00).CGColor,UIColor(red:0.56, green:0.83, blue:0.05, alpha:1.00).CGColor]
 		locations = [0.1490,0.8235]
 		gradient = CGGradientCreateWithColors(CGColorSpaceCreateDeviceRGB(), colors, &locations)
-		CGContextDrawLinearGradient(context, gradient, CGPointMake(-14.6, 9.3), CGPointMake(-29.0, 34.6), CGGradientDrawingOptions(rawValue: 0))
+		CGContextDrawLinearGradient(context, gradient, CGPointMake(-14.56, 9.32), CGPointMake(-29.04, 34.58), CGGradientDrawingOptions(rawValue: 0))
 		CGContextRestoreGState(context)
 		// END-GRADIENT-FILL
 
@@ -1863,7 +1866,7 @@ class ShapeView:UIView
 		colors = [UIColor(red:0.29, green:0.51, blue:0.06, alpha:1.00).CGColor,UIColor(red:0.56, green:0.83, blue:0.05, alpha:1.00).CGColor]
 		locations = [0.0000,0.8235]
 		gradient = CGGradientCreateWithColors(CGColorSpaceCreateDeviceRGB(), colors, &locations)
-		CGContextDrawLinearGradient(context, gradient, CGPointMake(-14.6, 9.3), CGPointMake(-29.0, 34.6), CGGradientDrawingOptions(rawValue: 0))
+		CGContextDrawLinearGradient(context, gradient, CGPointMake(-14.56, 9.32), CGPointMake(-29.04, 34.58), CGGradientDrawingOptions(rawValue: 0))
 		CGContextRestoreGState(context)
 		// END-GRADIENT-FILL
 
@@ -1882,7 +1885,7 @@ class ShapeView:UIView
 		colors = [UIColor(red:0.74, green:0.89, blue:0.06, alpha:1.00).CGColor,UIColor(red:0.56, green:0.83, blue:0.05, alpha:1.00).CGColor,UIColor(red:0.35, green:0.63, blue:0.07, alpha:1.00).CGColor]
 		locations = [0.0941,0.5882,0.9490]
 		gradient = CGGradientCreateWithColors(CGColorSpaceCreateDeviceRGB(), colors, &locations)
-		CGContextDrawLinearGradient(context, gradient, CGPointMake(-47.1, 13.6), CGPointMake(-7.4, -4.5), CGGradientDrawingOptions(rawValue: 0))
+		CGContextDrawLinearGradient(context, gradient, CGPointMake(-47.11, 13.62), CGPointMake(-7.39, -4.52), CGGradientDrawingOptions(rawValue: 0))
 		CGContextRestoreGState(context)
 		// END-GRADIENT-FILL
 
@@ -2134,10 +2137,10 @@ class ShapeView:UIView
 		CGPathAddQuadCurveToPoint(path, nil,   3.60,   9.20,   3.60,   9.30)
 		CGContextAddPath(context, path)
 		CGContextSetStrokeColorWithColor(context, UIColor(red:0.12, green:0.41, blue:0.09, alpha:0.60).CGColor)
-		CGContextSetLineWidth(context, 0.3)
+		CGContextSetLineWidth(context, 0.30)
 		CGContextSetLineCap(context, CGLineCap(rawValue:1)!)
 		CGContextSetLineJoin(context, CGLineJoin(rawValue:1)!)
-		CGContextSetMiterLimit(context, 3.0)
+		CGContextSetMiterLimit(context, 3.00)
 		CGContextStrokePath(context)
 		// END-SOLID-STROKE
 
@@ -2254,10 +2257,10 @@ class ShapeView:UIView
 		CGPathAddQuadCurveToPoint(path, nil,   5.10,   2.05,   5.60,   1.90)
 		CGContextAddPath(context, path)
 		CGContextSetStrokeColorWithColor(context, UIColor(red:0.12, green:0.41, blue:0.09, alpha:0.30).CGColor)
-		CGContextSetLineWidth(context, 0.3)
+		CGContextSetLineWidth(context, 0.30)
 		CGContextSetLineCap(context, CGLineCap(rawValue:1)!)
 		CGContextSetLineJoin(context, CGLineJoin(rawValue:1)!)
-		CGContextSetMiterLimit(context, 3.0)
+		CGContextSetMiterLimit(context, 3.00)
 		CGContextStrokePath(context)
 		// END-SOLID-STROKE
 
@@ -2265,10 +2268,10 @@ class ShapeView:UIView
 		path = CGPathCreateMutable()
 		CGContextAddPath(context, path)
 		CGContextSetStrokeColorWithColor(context, UIColor(red:0.00, green:0.00, blue:0.00, alpha:1.00).CGColor)
-		CGContextSetLineWidth(context, 0.0)
+		CGContextSetLineWidth(context, 0.00)
 		CGContextSetLineCap(context, CGLineCap(rawValue:0)!)
 		CGContextSetLineJoin(context, CGLineJoin(rawValue:1)!)
-		CGContextSetMiterLimit(context, 3.0)
+		CGContextSetMiterLimit(context, 3.00)
 		CGContextStrokePath(context)
 		// END-SOLID-STROKE
 
@@ -2283,7 +2286,7 @@ class ShapeView:UIView
 		colors = [UIColor(red:0.74, green:0.89, blue:0.06, alpha:1.00).CGColor,UIColor(red:0.56, green:0.83, blue:0.05, alpha:1.00).CGColor,UIColor(red:0.35, green:0.63, blue:0.07, alpha:1.00).CGColor]
 		locations = [0.0000,0.4392,0.9490]
 		gradient = CGGradientCreateWithColors(CGColorSpaceCreateDeviceRGB(), colors, &locations)
-		CGContextDrawLinearGradient(context, gradient, CGPointMake(-17.5, -47.3), CGPointMake(-27.6, -29.8), CGGradientDrawingOptions(rawValue: 0))
+		CGContextDrawLinearGradient(context, gradient, CGPointMake(-17.51, -47.32), CGPointMake(-27.59, -29.77), CGGradientDrawingOptions(rawValue: 0))
 		CGContextRestoreGState(context)
 		// END-GRADIENT-FILL
 
@@ -2306,7 +2309,7 @@ class ShapeView:UIView
 		colors = [UIColor(red:0.74, green:0.89, blue:0.06, alpha:1.00).CGColor,UIColor(red:0.56, green:0.83, blue:0.05, alpha:1.00).CGColor,UIColor(red:0.35, green:0.63, blue:0.07, alpha:1.00).CGColor]
 		locations = [0.0000,0.4392,0.9490]
 		gradient = CGGradientCreateWithColors(CGColorSpaceCreateDeviceRGB(), colors, &locations)
-		CGContextDrawLinearGradient(context, gradient, CGPointMake(-3.6, -8.1), CGPointMake(-14.2, -47.7), CGGradientDrawingOptions(rawValue: 0))
+		CGContextDrawLinearGradient(context, gradient, CGPointMake(-3.59, -8.06), CGPointMake(-14.21, -47.74), CGGradientDrawingOptions(rawValue: 0))
 		CGContextRestoreGState(context)
 		// END-GRADIENT-FILL
 
@@ -2330,7 +2333,7 @@ class ShapeView:UIView
 		colors = [UIColor(red:0.81, green:0.94, blue:0.26, alpha:1.00).CGColor,UIColor(red:0.44, green:0.71, blue:0.06, alpha:1.00).CGColor]
 		locations = [0.0000,1.0000]
 		gradient = CGGradientCreateWithColors(CGColorSpaceCreateDeviceRGB(), colors, &locations)
-		CGContextDrawLinearGradient(context, gradient, CGPointMake(-2.3, -17.9), CGPointMake(-15.0, -47.6), CGGradientDrawingOptions(rawValue: 0))
+		CGContextDrawLinearGradient(context, gradient, CGPointMake(-2.32, -17.86), CGPointMake(-14.98, -47.64), CGGradientDrawingOptions(rawValue: 0))
 		CGContextRestoreGState(context)
 		// END-GRADIENT-FILL
 
@@ -2512,10 +2515,10 @@ class ShapeView:UIView
 		CGPathAddLineToPoint(path, nil, -20.25, -41.95)
 		CGContextAddPath(context, path)
 		CGContextSetStrokeColorWithColor(context, UIColor(red:0.12, green:0.41, blue:0.09, alpha:0.60).CGColor)
-		CGContextSetLineWidth(context, 0.2)
+		CGContextSetLineWidth(context, 0.20)
 		CGContextSetLineCap(context, CGLineCap(rawValue:1)!)
 		CGContextSetLineJoin(context, CGLineJoin(rawValue:1)!)
-		CGContextSetMiterLimit(context, 3.0)
+		CGContextSetMiterLimit(context, 3.00)
 		CGContextStrokePath(context)
 		// END-SOLID-STROKE
 
