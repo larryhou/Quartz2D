@@ -79,6 +79,7 @@ class ViewController: UIViewController
         let graph = ShapeView(frame: view.frame)
         graph.backgroundColor = UIColor(white: 0.9, alpha: 1.0)
         view.addSubview(graph)
+//        graph.test()
     }
 
     override func didReceiveMemoryWarning()

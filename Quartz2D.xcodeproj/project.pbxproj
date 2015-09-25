@@ -17,6 +17,7 @@
 		6B7CA2F41B88C86400DA9BD7 /* LinearGradientBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7CA2F31B88C86400DA9BD7 /* LinearGradientBoxView.swift */; };
 		6B7CA2F61B88D7B100DA9BD7 /* RadialGradientBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7CA2F51B88D7B100DA9BD7 /* RadialGradientBoxView.swift */; };
 		6B7CA2FA1B8A112200DA9BD7 /* ShapeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7CA2F91B8A112200DA9BD7 /* ShapeView.swift */; };
+		6BBE638A1B8D95A90065C5AB /* DrawingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BBE63891B8D95A90065C5AB /* DrawingView.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		6B7CA2F31B88C86400DA9BD7 /* LinearGradientBoxView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinearGradientBoxView.swift; sourceTree = "<group>"; };
 		6B7CA2F51B88D7B100DA9BD7 /* RadialGradientBoxView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadialGradientBoxView.swift; sourceTree = "<group>"; };
 		6B7CA2F91B8A112200DA9BD7 /* ShapeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShapeView.swift; sourceTree = "<group>"; };
+		6BBE63891B8D95A90065C5AB /* DrawingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 			children = (
 				6B7CA2C51B888E2A00DA9BD7 /* AppDelegate.swift */,
 				6B7CA2C71B888E2A00DA9BD7 /* ViewController.swift */,
+				6BBE63891B8D95A90065C5AB /* DrawingView.swift */,
 				6B7CA2F31B88C86400DA9BD7 /* LinearGradientBoxView.swift */,
 				6B7CA2F51B88D7B100DA9BD7 /* RadialGradientBoxView.swift */,
 				6B7CA2F91B8A112200DA9BD7 /* ShapeView.swift */,
@@ -267,6 +270,7 @@
 				6B7CA2C81B888E2A00DA9BD7 /* ViewController.swift in Sources */,
 				6B7CA2F61B88D7B100DA9BD7 /* RadialGradientBoxView.swift in Sources */,
 				6B7CA2FA1B8A112200DA9BD7 /* ShapeView.swift in Sources */,
+				6BBE638A1B8D95A90065C5AB /* DrawingView.swift in Sources */,
 				6B7CA2F41B88C86400DA9BD7 /* LinearGradientBoxView.swift in Sources */,
 				6B7CA2C61B888E2A00DA9BD7 /* AppDelegate.swift in Sources */,
 			);
@@ -497,6 +501,7 @@
 				6B7CA2EC1B888E2A00DA9BD7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6B7CA2ED1B888E2A00DA9BD7 /* Build configuration list for PBXNativeTarget "Quartz2DTests" */ = {
 			isa = XCConfigurationList;
@@ -505,6 +510,7 @@
 				6B7CA2EF1B888E2A00DA9BD7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6B7CA2F01B888E2A00DA9BD7 /* Build configuration list for PBXNativeTarget "Quartz2DUITests" */ = {
 			isa = XCConfigurationList;
@@ -513,6 +519,7 @@
 				6B7CA2F21B888E2A00DA9BD7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
